@@ -29,7 +29,16 @@ public enum ApiEnum {
     ORDER_AFTERSALE_CONFIRM("alipay.commerce.rent.order.aftersale.confirm", "租赁订单售后处理"),
     ORDER_AFTERSALE_CREATE("alipay.commerce.rent.order.aftersale.create", "租赁售后单创建"),
 
-
+    /** 其他 */
+    ORDER_PAY_QUERY("alipay.commerce.rent.order.pay.query", "租赁订单支付查询"),
+    RDER_RENTPLANINFO_APPEND("alipay.commerce.rent.order.rentplaninfo.append", "订单租赁计划信息追加"),
+    ORDER_RISK_CONSULT("alipay.commerce.rent.risk.consult", "租赁行业风险咨询"),
+    ORDER_TRADE_QUERY("alipay.trade.query", "统一收单交易查询"),
+    ORDER_FUND_QUERY("alipay.fund.auth.operation.detail.query", "资金授权操作查询"),
+    ORDER_MODIFY("alipay.commerce.rent.order.modify", "订单信息修改"),
+    ORDER_TRADE_REFUND("alipay.trade.refund", "统一收单交易退款查询"),
+    ORDER_TRADE_REFUND_QUERY("alipay.trade.fastpay.refund.query", "统一收单交易退款查询"),
+    ORDER_BILL_QUERY("alipay.data.dataservice.bill.downloadurl.query", "查询对账单下载地址"),
     ;
 
     private final String method;

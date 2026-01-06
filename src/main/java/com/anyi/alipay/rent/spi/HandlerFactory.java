@@ -30,6 +30,17 @@ public final class HandlerFactory {
         REPO.put(ApiEnum.ORDER_AFTERSALE_CONFIRM, new OrderAftersaleConfirmHandler());
         REPO.put(ApiEnum.ORDER_AFTERSALE_CREATE, new OrderAftersaleCreateHandler());
 
+        REPO.put(ApiEnum.ORDER_PAY_QUERY, new OrderPayQueryHandler());
+        REPO.put(ApiEnum.RDER_RENTPLANINFO_APPEND, new OrderRentplaninfoAppendHandler());
+        REPO.put(ApiEnum.ORDER_RISK_CONSULT, new OrderRiskConsultHandler());
+        REPO.put(ApiEnum.ORDER_TRADE_QUERY, new OrderTradeQueryHandler());
+        REPO.put(ApiEnum.ORDER_FUND_QUERY, new OrderFundQueryHandler());
+        REPO.put(ApiEnum.ORDER_MODIFY, new OrderModifyHandler());
+        REPO.put(ApiEnum.ORDER_TRADE_REFUND, new OrderTradeRefundHandler());
+        REPO.put(ApiEnum.ORDER_TRADE_REFUND_QUERY, new OrderTradeRefundQueryHandler());
+        REPO.put(ApiEnum.ORDER_BILL_QUERY, new OrderBillQueryHandler());
+
+
 
     }
 
@@ -60,6 +71,16 @@ public final class HandlerFactory {
 
         if (name.startsWith("OrderAftersaleConfirm")) return ApiEnum.ORDER_AFTERSALE_CONFIRM;
         if (name.startsWith("OrderAftersaleCreate")) return ApiEnum.ORDER_AFTERSALE_CREATE;
+
+        if (name.startsWith("OrderPayQuery")) return ApiEnum.ORDER_PAY_QUERY;
+        if (name.startsWith("OrderRentplaninfoAppend")) return ApiEnum.RDER_RENTPLANINFO_APPEND;
+        if (name.startsWith("OrderRiskConsult")) return ApiEnum.ORDER_RISK_CONSULT;
+        if (name.startsWith("OrderTradeQuery")) return ApiEnum.ORDER_TRADE_QUERY;
+        if (name.startsWith("OrderFundQuery")) return ApiEnum.ORDER_FUND_QUERY;
+        if (name.startsWith("OrderModify")) return ApiEnum.ORDER_MODIFY;
+        if (name.startsWith("OrderTradeRefund")) return ApiEnum.ORDER_TRADE_REFUND;
+        if (name.startsWith("OrderTradeRefundQuery")) return ApiEnum.ORDER_TRADE_REFUND_QUERY;
+        if (name.startsWith("OrderBillQuery")) return ApiEnum.ORDER_BILL_QUERY;
         throw new IllegalArgumentException("无法识别的请求:" + name);
     }
 }
