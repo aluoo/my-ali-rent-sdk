@@ -12,6 +12,9 @@ public final class HandlerFactory {
 
     static {
         /* 手工注册 */
+        REPO.put(ApiEnum.USER_LOGIN, new UserLoginHandler());
+        REPO.put(ApiEnum.USER_INFO, new UserInfoHandler());
+
         REPO.put(ApiEnum.ORDER_SIGN, new OrderSignHandler());
         REPO.put(ApiEnum.ORDER_QUERY, new OrderQueryHandler());
         REPO.put(ApiEnum.ORDER_CREATE, new OrderCreateHandler());
@@ -40,8 +43,6 @@ public final class HandlerFactory {
         REPO.put(ApiEnum.ORDER_TRADE_REFUND_QUERY, new OrderTradeRefundQueryHandler());
         REPO.put(ApiEnum.ORDER_BILL_QUERY, new OrderBillQueryHandler());
 
-
-
     }
 
     public static ApiHandler getHandler(BaseRequest request) {
@@ -54,6 +55,10 @@ public final class HandlerFactory {
     private static ApiEnum resolve(BaseRequest request) {
 
         String name = request.getClass().getSimpleName();
+
+        if (name.startsWith("UserLogin")) return ApiEnum.USER_LOGIN;
+        if (name.startsWith("UserInfo")) return ApiEnum.USER_INFO;
+
         if (name.startsWith("OrderSign")) return ApiEnum.ORDER_SIGN;
         if (name.startsWith("OrderQuery")) return ApiEnum.ORDER_QUERY;
         if (name.startsWith("OrderCreate")) return ApiEnum.ORDER_CREATE;

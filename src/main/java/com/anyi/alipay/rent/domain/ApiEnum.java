@@ -7,6 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ApiEnum {
 
+    /** 用户 */
+    USER_LOGIN("alipay.system.oauth.token", "获取access token"),
+    USER_INFO("alipay.user.info.share", "获取用户信息"),
+
     /** 订单创建 */
     ORDER_SIGN("alipay.commerce.rent.order.sign", "租赁订单签约"),
     ORDER_QUERY("alipay.commerce.rent.order.query", "租赁订单查询"),

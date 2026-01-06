@@ -47,16 +47,21 @@ public class AlipayRentClient {
             this.executor = executor;
             return this;
         }
+
         public AlipayRentClient build() {
+            // 使用证书模式的构造方法
             AlipayClient client = new DefaultAlipayClient(
                     AlipayConfigHolder.serverUrl(),
                     AlipayConfigHolder.appId(),
                     AlipayConfigHolder.privateKey(),
                     "json",
                     AlipayConfigHolder.charset(),
-                    AlipayConfigHolder.alipayPublicKey(),
+                    AlipayConfigHolder.appCertPath(),        // 应用证书路径
+                    AlipayConfigHolder.alipayPublicCertPath(), // 支付宝公钥证书路径
+                    AlipayConfigHolder.rootCertPath(),       // 根证书路径
                     AlipayConfigHolder.signType());
             return new AlipayRentClient(client, executor);
         }
+
     }
 }
